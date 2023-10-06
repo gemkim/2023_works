@@ -678,7 +678,7 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 120px 0;
+        padding: 7% 0;
         width: 50%;
         background-color: #e8d6bb;
         .thumb{
@@ -970,6 +970,14 @@ header{
   }
 }
 
+.companies{
+  padding: 100px 0;
+  .swiper{
+    z-index: 10;
+  }
+
+}
+
 .moving-btn {
   position: relative; 
   z-index: 9;
@@ -1063,7 +1071,7 @@ header{
 }
 
 .goodbye{
-  padding: 100px 0 0;
+  padding: 200px 0 0;
   overflow: hidden;
   .last{
     &-profile{
