@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/style.css">
+		
+		<!-- Swiper -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <!-- 웹폰트 -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css">
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="icon/favicon.ico">
@@ -26,22 +29,25 @@
     <link rel="icon" href="assets/icon/favicon-64.png" sizes="64x64">
     <link rel="icon" href="assets/icon/favicon-128.png" sizes="128x128">
 
+		<!-- js -->
+    <script src="assets/js/custom.js" defer></script>
+		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9MU9No6GBEedmVFz3wb13KKQ5h38Y4Y4&callback=myMap"></script>
 </head>
 
 <body>
 	<header>
 		<div class="container">
 			<ul class="gnb">
-				<li><a href="#section1">K.<em>About Me</em></a></li>
-				<li><a href="#section3">Work<em>Coding</em></a></li>
-				<li><a href="#section3">Logo</a></li>
-				<li class="right"><a href="#section5">Ani<em>CSS Animation</em></a></li>
-				<li class="right"><a href="#section6">Contact<em>Follow Me</em></a></li>
+				<li><a href="#about">K.<em>About Me</em></a></li>
+				<li><a href="#project">Work<em>Coding</em></a></li>
+				<li class="logo"><a href="index.html">MJ.Kim</a></li>
+				<li class="right"><a href="#skills">skills<em>CSS Animation</em></a></li>
+				<li class="right"><a href="#goodbye">Contact<em>Follow Me</em></a></li>
 			</ul>
 		</div>
 	</header>
 	<div class="wrap">
-		<section class="main">
+		<section id="main" class="main">
 			<div class="container">
 				<div class="main-profile">
 					<div class="figure"></div>
@@ -119,7 +125,7 @@
 		</div>
 		</section>
 
-		 <section class="about">
+		 <section id="about" class="about">
 			<div class="about-intro">
 				<span class="pic-thumb">
 					<img src="assets/img/profile_pic.jpg" alt="프로필사진">
@@ -141,7 +147,7 @@
 				</h3>
 
 				<div class="duty">
-					<article class="duty-list learn">
+					<article id="learn" class="duty-list learn">
 						<h3 class="duty-title">
 							<span>L</span><span>e</span><span>a</span><span>r</span><span>n</span>
 						</h3>
@@ -159,7 +165,7 @@
 							</ul>
 						</div>
 					</article>
-					<article class="duty-list think">
+					<article id="think" class="duty-list think">
 						<h3 class="duty-title">
 							<span>T</span><span>h</span><span>i</span><span>n</span><span>k</span>
 						</h3>
@@ -178,7 +184,7 @@
 						</div>
 					</article>
 
-					<article class="duty-list create">
+					<article id="create" class="duty-list create">
 						<h3 class="duty-title">
 							<span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>e</span>
 						</h3>
@@ -200,7 +206,7 @@
 			</div>
 		</section>
 
-		<section class="project">
+		<section id="project" class="project">
 			<div class="project-area">
 				<article class="work-list">
 					<div class="work-left">
@@ -342,53 +348,48 @@
 				</div>
 			</div>
 			<div class="work-wrap">
+			
 				<div class="slide-area">
 					<p class="category">Check Standard Anime</p>
 
-					<ul class="slides">
-						<li>
-							<div class="bar">
-									<div class="bar1"></div>
-									<div class="bar2"></div>
-							</div>
-							<div class="rank"><strong>1</strong>
-							</div>
-						</li>
-						<li>
-							<div class="bar">
-									<div class="bar1"></div>
-									<div class="bar2"></div>
-							</div>
-							<div class="rank"><strong>1</strong>
-							</div>
-						</li>
-						<li>
-							<div class="cube">
-									<div>CUBE</div>
-									<div></div>
-									<div></div>
-									<div></div>
-									<div></div>
-									<div></div>
-							</div>
-							<div class="rank"><strong>2</strong>
-							</div>
-						</li>
+					<div class="swiper mySwiper">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><a href="#">Slide 1</a></li>
+							<li class="swiper-slide"><a href="#">Slide 2</a></li>
+							<li class="swiper-slide"><a href="#">Slide 3</a></li>
+							<li class="swiper-slide"><a href="#">Slide 4</a></li>
+							<li class="swiper-slide"><a href="#">Slide 5</a></li>
+						</ul>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
 
-						<li>
-							<div class="bar">
-									<div class="bar1"></div>
-									<div class="bar2"></div>
-							</div>
-							<div class="rank"><strong>3</strong>
-							</div>
-						</li>
-					</ul>
-			</div>
+				<script type="module">
+					const swiper = new Swiper(".mySwiper", {
+						slidesPerView: 1,
+						spaceBetween: 10,
+						pagination: {
+							el: ".swiper-pagination",
+							type: "fraction", // bullets, progressbar, custom, Scrollbar
+						},
+						breakpoints: {
+							1024: {
+								slidesPerView: 2.5,  //브라우저가 1024보다 클 때
+								spaceBetween: 30,
+								centeredSlides: true,
+								pagination: {
+									el: ".swiper-pagination",
+									type: "bullets", 
+								},
+							},
+						},
+
+					});
+				</script>
 			</div>
 		</section>
 
-		<section class="skills">
+		<section id="skills" class="skills">
 			<div class="container">
 				<ul class="skill">
 					<li class="skill-01">
@@ -467,8 +468,8 @@
 				</ul>
 			</div>
 		</section>
-<!--
-		<section class="goodbye">
+
+		<section id="goodbye" class="goodbye">
 			<div class="container">
 				<div class="last-profile">
 					<span class="center-thumb">
@@ -516,6 +517,8 @@
 					</dl>
 				</div>
 			</div>
+			<!-- map -->
+			<div id="googleMap" style="width: 100%;height: 700px;"></div>
 		</section>
 
 		<section class="contact">
@@ -540,35 +543,16 @@
 
 								<p class="mail-sign from">&lt; / From You &gt;</p>
 								<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-								<input class="submit" type="submit" value="SEND">
+								<button class="btn-submit" type="submit">SEND</button>
 						</fieldset>
 				</form>
 			</div>
 			</div>
-		</section> -->
+		</section> 
 	</div>
-  
-    <div id="contents">
-     
-        <!-- <section id="section6">
-            <div class="sec6">
-                <div class="contact">
-                
-
-                    <div id="map"></div>
-
-                  
-                </div>
-            </div>
-        </section> -->
-
-        <div class="cursor"></div>
-        <div class="cursor_follow"></div>
-
-    </div>
-    <img src="assets/img/ani_05.jpg" alt="" style="display: none;">
-
-   
+	<div class="cursor">
+		<span class="ball"></span>
+	</div>
 </body>
 
 </html>
