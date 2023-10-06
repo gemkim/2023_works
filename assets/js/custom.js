@@ -140,7 +140,7 @@ let mouseX = 0;
 let mouseY = 0;
 let shapeX = 0;
 let shapeY = 0;
-let speed = .1;
+let speed = .25;
 const mouseShape = document.querySelector('.cursor');
 
 FollowCursor();
