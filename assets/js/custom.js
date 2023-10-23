@@ -36,6 +36,55 @@ let observer = new IntersectionObserver((e) => {
 const learn = document.querySelector('#learn')
 observer.observe(learn);
 
+const swiper = new Swiper(".mySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 10,
+	pagination: {
+		el: ".swiper-pagination",
+		type: "fraction", // bullets, progressbar, custom, Scrollbar
+	},
+	breakpoints: {
+		1024: {
+			slidesPerView: 2.5,  //브라우저가 1024보다 클 때
+			spaceBetween: 30,
+			centeredSlides: true,
+			pagination: {
+				el: ".swiper-pagination",
+				type: "bullets", 
+			},
+		},
+	},
+});
+
+const swiper2 = new Swiper(".banners", {
+					
+	slidesPerView: 1,
+	spaceBetween: 10,
+	speed : 4000,
+	loop : true,
+	autoplay: {
+		delay: 0,
+		disableOnInteraction: false,
+	},
+	pagination: {
+		// el: ".swiper-pagination",
+		clickable: true,
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	breakpoints: {
+		1024: {
+			slidesPerView: 5,  //브라우저가 1024보다 클 때
+			spaceBetween: 30,
+		},
+	},
+
+});
+
+
+
 // function addShowClassName(id ){
 	
 // 	const area = document.querySelector( '#' + id)
