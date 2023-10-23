@@ -67,6 +67,11 @@ header{
     display: none;
   }
 }
+.wrap{
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
 // 메인
 .main { 
   position: relative;
@@ -392,7 +397,6 @@ header{
         transition: all 0.5s 0.6s ease-in-out;
       }
     }
-  
   }
   .duty{
     margin-top: 100px;
@@ -974,8 +978,26 @@ header{
   padding: 100px 0;
   .swiper{
     z-index: 10;
-  }
+    .swiper-wrapper{
+      .swiper-slide{
+        text-align: center;
+      }
+    }
+    .swiper-button-next, .swiper-button-prev{
+      color: $--sub-color;
+      transition: opacity .3s ease-in-out;
+      &:after{
+       font-size: 1.6rem;
+      }
+      &:hover{
+        opacity: .6;
+      }
+    }
+    .swiper-button-next{}
+    .swiper-button-prev{
 
+    }
+  }
 }
 
 .moving-btn {
