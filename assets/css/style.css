@@ -64,6 +64,12 @@ header .gnb li:hover a em {
   }
 }
 
+.wrap {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .main {
   position: relative;
   overflow: hidden;
@@ -352,7 +358,7 @@ header .gnb li:hover a em {
   top: -2px;
   width: 20px;
   height: 20px;
-  background: #bc7f3430;
+  background: rgba(188, 127, 52, 0.1882352941);
 }
 .about .about-intro .context .desc span {
   display: block;
@@ -382,7 +388,7 @@ header .gnb li:hover a em {
   left: 0;
   width: 100%;
   height: 5px;
-  background: #b57c6c90;
+  background: rgba(181, 124, 108, 0.5647058824);
   transition: all 0.5s 0.6s ease-in-out;
 }
 .about .duty {
@@ -515,7 +521,7 @@ header .gnb li:hover a em {
     width: 100%;
   }
   .about .duty-context.right .sub-tit,
-.about .duty-context.right .sub-list li {
+  .about .duty-context.right .sub-list li {
     text-align: right;
   }
   .about .duty-context .sub-tit {
@@ -905,7 +911,19 @@ header .gnb li:hover a em {
 .companies .swiper {
   z-index: 10;
 }
-
+.companies .swiper .swiper-wrapper .swiper-slide {
+  text-align: center;
+}
+.companies .swiper .swiper-button-next, .companies .swiper .swiper-button-prev {
+  color: #b57c6c;
+  transition: opacity 0.3s ease-in-out;
+}
+.companies .swiper .swiper-button-next:after, .companies .swiper .swiper-button-prev:after {
+  font-size: 1.6rem;
+}
+.companies .swiper .swiper-button-next:hover, .companies .swiper .swiper-button-prev:hover {
+  opacity: 0.6;
+}
 .moving-btn {
   position: relative;
   z-index: 9;
