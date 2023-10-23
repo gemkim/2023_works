@@ -1,3 +1,4 @@
+
 // Header Scrolls
 let prevY = 0;
 const header = document.querySelector('header');
@@ -23,7 +24,6 @@ function handleScrollHeader( scrollY ){
 }
 
 let observer = new IntersectionObserver((e) => {
-	console.log(e);
 	e.forEach( tag => {
 		if( tag.isIntersecting ){
 			tag.target.style.opacity = 1
@@ -185,11 +185,22 @@ document.addEventListener('mousemove', function (e) {
     docStyle.setProperty('--mouse-y', e.clientY);
 });
 
+// 메일보내기 JS 
+const form = document.querySelector('#form')
 
+form.addEventListener('submit', function(event) {
+	event.preventDefault();
+	emailjs.sendForm('dev-mjkim', 'template_npdez1j', form, "6HCLOnDPBEHZfAOaZ")
+		.then((res) => {
+			alert('메일이 전달되었습니다 😍');
+		}, (err) => {
+			alert(JSON.stringify(err));
+		});
+});
 
 (() => {
 	counter();
-	imagesProgress();
+	// imagesProgress();
 })()
 
 function counter() {

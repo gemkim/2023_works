@@ -2,36 +2,39 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
-    <meta name="author" content="CHLOE">
-    <meta name="description" content="UX UI 퍼블리셔 프론트엔드 포트폴리오">
-    <meta name="keywords" content="포트폴리오, 웹접근성, 반응형홈페이지">
-    <title>MINJEONG SITE</title>
-    <!--CSS style-->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!-- Swiper -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="author" content="CHLOE">
+	<meta name="description" content="UX UI 퍼블리셔 프론트엔드 포트폴리오">
+	<meta name="keywords" content="포트폴리오, 웹접근성, 반응형홈페이지">
+	<title>MINJEONG SITE</title>
+	<!--CSS style-->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/common.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <!-- 웹폰트 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css">
-    <!-- 파비콘 -->
-    <link rel="shortcut icon" href="icon/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="icon/favicon-152.png">
-    <link rel="icon" href="assets/icon/favicon-64.png">
-    <link rel="icon" href="assets/icon/favicon-16.png" sizes="16x16">
-    <link rel="icon" href="assets/icon/favicon-32.png" sizes="32x32">
-    <link rel="icon" href="assets/icon/favicon-48.png" sizes="48x48">
-    <link rel="icon" href="assets/icon/favicon-64.png" sizes="64x64">
-    <link rel="icon" href="assets/icon/favicon-128.png" sizes="128x128">
+	<!-- 웹폰트 -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css">
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="icon/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="icon/favicon-152.png">
+	<link rel="icon" href="assets/icon/favicon-64.png">
+	<link rel="icon" href="assets/icon/favicon-16.png" sizes="16x16">
+	<link rel="icon" href="assets/icon/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="assets/icon/favicon-48.png" sizes="48x48">
+	<link rel="icon" href="assets/icon/favicon-64.png" sizes="64x64">
+	<link rel="icon" href="assets/icon/favicon-128.png" sizes="128x128">
 
-		<!-- js -->
-    <script src="assets/js/custom.js" defer></script>
-		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9MU9No6GBEedmVFz3wb13KKQ5h38Y4Y4&callback=myMap"></script>
+	<!-- js -->
+	<script src="assets/js/custom.js" defer></script>
+	<!-- //지도 -->
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9MU9No6GBEedmVFz3wb13KKQ5h38Y4Y4&callback=myMap"></script>
+	<!-- // 메일 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -47,6 +50,9 @@
 		</div>
 	</header>
 	<div class="wrap">
+		<div class="cursor">
+			<span class="ball"></span>
+		</div>
 		<section id="main" class="main">
 			<div class="container">
 				<div class="main-profile">
@@ -364,7 +370,7 @@
 						<div class="swiper-pagination"></div>
 					</div>
 				</div>
-
+				
 				<script type="module">
 					const swiper = new Swiper(".mySwiper", {
 						slidesPerView: 1,
@@ -498,36 +504,38 @@
 		</section>
 
 		<section id="companies" class="companies">
-			<div class="swiper banners">
-				<ul class="swiper-wrapper">
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/hyundai.png" alt="현대 로고">
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/kia-b.png" alt="기아 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/kids.png" alt="키즈현대 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/kiehls.png" alt="키엘 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/kodex.png" alt="삼성자산운용 코덱스 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/media-pr.png" alt="미디어PR 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/tassimo.png" alt="타시모 로고" />
-					</li>
-					<li class="swiper-slide">
-						<img src="/assets/img/companies/young.png" alt="영현대 로고" />
-					</li>
-				</ul>
-				<!-- <div class="swiper-pagination"></div> -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
+			<div class="container">
+				<div class="swiper banners">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/hyundai.png" alt="현대 로고">
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/kia-b.png" alt="기아 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/kids.png" alt="키즈현대 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/kiehls.png" alt="키엘 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/kodex.png" alt="삼성자산운용 코덱스 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/media-pr.png" alt="미디어PR 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/tassimo.png" alt="타시모 로고" />
+						</li>
+						<li class="swiper-slide">
+							<img src="/assets/img/companies/young.png" alt="영현대 로고" />
+						</li>
+					</ul>
+					<!-- <div class="swiper-pagination"></div> -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
 			</div>
 
 			<script type="module">
@@ -620,29 +628,24 @@
 				</h3>
 
 				<div class="mail-form">
-					<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/91gem@naver.com" method="post">
-						<fieldset id="fs-frm-inputs">
-								<p class="mail-sign to">&lt; To MJ.K &gt;</p>
-								<label for="name" class="ir">Name</label>
-								<input type="text" name="name" id="name" placeholder="YOUR NAME*" required="" class="name">
-
-								<label for="mail-address" class="ir">Email Address</label>
-								<input type="email" name="_replyto" id="mail-address" placeholder="YOUR E-MAIL*" required="" class="email">
-
+					<form id="form">
+						<fieldset>
+								<p class="mail-sign to">&lt; To &gt;</p>
+								<label for="to_name" class="ir">받는사람</label>
+								<input type="text" name="to_name" id="to_name" value="Dev.Kim">
+								<label for="from_name" class="ir">from_name</label>
+								<input type="text" name="from_name" id="from_name" placeholder="보내는 사람" size="8">
+								<label for="email" class="ir">Email Address</label>
+								<input type="email" class="email" name="email" id="email" placeholder="YOUR E-MAIL*"  >
 								<label for="message" class="ir">Message</label>
-								<textarea rows="5" name="message" id="message" placeholder="MESSAGE*" required=""></textarea>
-
+								<textarea name="message" class="message" id="message" placeholder="MESSAGE*" rows="5" ></textarea>
 								<p class="mail-sign from">&lt; / From You &gt;</p>
-								<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-								<button class="btn-submit" type="submit">SEND</button>
+								<button class="btn-submit">SEND</button>
 						</fieldset>
 				</form>
 			</div>
 			</div>
 		</section> 
-	</div>
-	<div class="cursor">
-		<span class="ball"></span>
 	</div>
 </body>
 
