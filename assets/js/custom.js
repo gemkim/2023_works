@@ -7,8 +7,6 @@ window.addEventListener('scroll', (e) => {
 	let currentScrollY = e.currentTarget.pageYOffset; // 현재 스크롤 위치
 
 	handleScrollHeader(currentScrollY) // scroll시, header 위치값
-
-
 })
 
 
@@ -101,76 +99,6 @@ const swiper2 = new Swiper(".banners", {
 // }
 
 
-//스크롤 타입셋
-// $(window).scroll(function () {
-// 	let wScroll = $(this).scrollTop();
-// 	console.log(wScroll);
-
-// 	if (wScroll >= $("#about").offset().top - $(window).height() / 2) {
-// 			$("#about").addClass("show");
-// 	}
-// 	if (wScroll >= $("#learn").offset().top - $(window).height() / 2) {
-// 			$("#learn").addClass("show");
-// 	}
-// 	if (wScroll >= $("#think").offset().top - $(window).height() / 2) {
-// 			$("#think").addClass("show");
-// 	}
-// 	if (wScroll >= $("#create").offset().top - $(window).height() / 2) {
-// 			$("#create").addClass("show");
-// 	}
-// 	if (wScroll >= $("#profile_txt").offset().top - $(window).height() / 2) {
-// 			$("#profile_txt").addClass("show");
-// 	}
-// 	if (wScroll >= $(".work_tit_list").offset().top - $(window).height() / 2) {
-// 			$(".work_tit_list").addClass("show");
-// 	}
-// 	if (wScroll >= $(".site01").offset().top - $(window).height() / 2) {
-// 			$(".site01").addClass("show");
-// 	}
-// 	if (wScroll >= $(".site02").offset().top - $(window).height() / 2) {
-// 			$(".site02").addClass("show");
-// 	}
-// 	if (wScroll >= $(".site03").offset().top - $(window).height() / 2) {
-// 			$(".site03").addClass("show");
-// 	}
-// 	if (wScroll >= $(".site04").offset().top - $(window).height() / 2) {
-// 			$(".site04").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill1").offset().top - $(window).height() / 2) {
-// 			$(".skill1").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill2").offset().top - $(window).height() / 2) {
-// 			$(".skill2").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill3").offset().top - $(window).height() / 2) {
-// 			$(".skill3").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill4").offset().top - $(window).height() / 2) {
-// 			$(".skill4").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill5").offset().top - $(window).height() / 2) {
-// 			$(".skill5").addClass("show");
-// 	}
-// 	if (wScroll >= $(".skill6").offset().top - $(window).height() / 2) {
-// 			$(".skill6").addClass("show");
-// 	}
-// 	if (wScroll >= $("#section5").offset().top - $(window).height() / 2) {
-// 			$("#section5").addClass("show");
-// 	}
-// 	if (wScroll >= $(".profile1").offset().top - $(window).height() / 2) {
-// 			$(".profile1").addClass("show");
-// 	}
-// 	if (wScroll >= $(".contact_info").offset().top - $(window).height() / 2) {
-// 			$(".contact_info").addClass("show");
-// 	}
-// 	if (wScroll >= $("#map").offset().top - $(window).height() / 2) {
-// 			$("#map").addClass("show");
-// 	}
-// 	if (wScroll >= $(".mailForm").offset().top - $(window).height() / 2) {
-// 			$(".mailForm").addClass("show");
-// 	}
-// });
-
 
 
 // Map
@@ -250,6 +178,18 @@ form.addEventListener('submit', function(event) {
 (() => {
 	counter();
 	// imagesProgress();
+	setTimeout(() => {
+		const body = document.querySelector('body')
+		body.classList.add('active')
+	}, 2000)
+
+	// intro 효과 
+	const main = document.querySelector('#main')
+	main.classList.remove('show')
+	setTimeout(intro, 0);
+
+
+	function intro(){}
 })()
 
 function counter() {
@@ -274,50 +214,67 @@ function countingType(value, list){
 			setTimeout(()=>{
 				current[ arrayNum.length - j - 1 ] = i;
 				list.innerHTML = current.join('');
-			}, eachTime * ( time + i ))
+			}, 2000)
 		}
-		time += arrayNum[j] - 1;
 	}
 }
 
+const reg_name = /^[가-힣a-zA-Z]+$/; // 한글 + 영문만
+
+
 
 // function imagesProgress() {
-//     var $container = $('#progress'),
-//         $progressBar = $container.find('.progress-bar'),
-//         $progressText = $container.find('.progress-text'),
-//         imgLoad = imagesLoaded('body'),
-//         imgTotal = imgLoad.images.length,
-//         imgLoaded = 0,
-//         current = 0,
-//         progressTimer = setInterval(updateProgress, 1000 / 60);
+// 	const imgLoad = imagesLoaded('body'),
+// 			imgTotal = imgLoad.images.length,
+// 			imgLoaded = 0,
+// 			current = 0;
+// 			progressTimer = setInterval(updateProgress, 1000 / 60);
+// 	// imgLoad.on('progress', function () {
+// 	// 		imgLoaded++;
+// 	// });
 
-//     imgLoad.on('progress', function () {
-//         imgLoaded++;
-//     });
+// 	function updateProgress() {
+// 			var target = (imgLoaded / imgTotal) * 100;
 
-//     function updateProgress() {
-//         var target = (imgLoaded / imgTotal) * 100;
+// 			current += (target - current) * 0.1;
+// 			$progressText.text(Math.floor(current) + '%');
 
-//         current += (target - current) * 0.1;
-//         $progressText.text(Math.floor(current) + '%');
-
-//         if (current >= 100) {
-//             clearInterval(progressTimer);
-//             $progressBar.add($progressText).delay(500)
-//                 .animate({
-//                     opacity: 0
-//                 }, 100, function () {
-//                     $container.animate({
-//                         top: '-110%'
-//                     }, 1000, 'easeInOutQuint');
-//                 });
-//             $('body').addClass('active');
-//         }
-//         if (current > 99.98) {
-//             current = 100;
-//         }
-//     }
+// 			if (current >= 100) {
+// 					clearInterval(progressTimer);
+// 					$progressBar.add($progressText).delay(500)
+// 							.animate({
+// 									opacity: 0
+// 							}, 100, function () {
+// 									$container.animate({
+// 											top: '-110%'
+// 									}, 1000, 'easeInOutQuint');
+// 							});
+// 					$('body').addClass('active');
+// 			}
+// 			if (current > 99.98) {
+// 					current = 100;
+// 			}
+// 	}
 // };
+
+const currentSection = document.querySelector('#about .learn')
+window.addEventListener('scroll', () => {
+	hadleAddClassShow('#about .about-intro')
+	hadleAddClassShow('#about .container')
+	hadleAddClassShow('#about .learn')
+})
+
+function hadleAddClassShow(section){
+	const currentSection = document.querySelector(section)
+	let wScroll = window.scrollY
+	console.log(wScroll, section, currentSection.offsetHeight / 2, currentSection.offsetHeight);
+	// console.log(section, currentSection.offsetTop - currentSection.clientHeight/2);
+	if ( wScroll >= currentSection.offsetTop - currentSection.offsetHeight / 2 ) {
+		currentSection.classList.add('show')
+	} else{
+		currentSection.classList.remove('show')
+	}
+}
 
 
 
@@ -380,13 +337,12 @@ function countingType(value, list){
 
 
 
-//프로젝트 text-hover 효과
-$(".work_tit_list ul li").hover(function () {
-    var num = $(".work_tit_list ul li").index($(this));
-    $(".work_view ul li img").removeClass("show"),
-        $(".work_view ul li img").eq(num).addClass("show").siblings().removeClass("show");
-});
-$(".work_text ul").click(function () {
-    event.preventDefault();
-});
-
+// //프로젝트 text-hover 효과
+// $(".work_tit_list ul li").hover(function () {
+//     var num = $(".work_tit_list ul li").index($(this));
+//     $(".work_view ul li img").removeClass("show"),
+//         $(".work_view ul li img").eq(num).addClass("show").siblings().removeClass("show");
+// });
+// $(".work_text ul").click(function () {
+//     event.preventDefault();
+// });
