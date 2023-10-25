@@ -21,18 +21,7 @@ function handleScrollHeader( scrollY ){
 	prevY = scrollY;
 }
 
-let observer = new IntersectionObserver((e) => {
-	e.forEach( tag => {
-		if( tag.isIntersecting ){
-			tag.target.style.opacity = 1
-		} else{
-			tag.target.style.opacity = 0
-		}
-	});
-})
 
-const learn = document.querySelector('#learn')
-observer.observe(learn);
 
 const swiper = new Swiper(".mySwiper", {
 	slidesPerView: 1,
@@ -222,61 +211,41 @@ function countingType(value, list){
 const reg_name = /^[가-힣a-zA-Z]+$/; // 한글 + 영문만
 
 
-
-// function imagesProgress() {
-// 	const imgLoad = imagesLoaded('body'),
-// 			imgTotal = imgLoad.images.length,
-// 			imgLoaded = 0,
-// 			current = 0;
-// 			progressTimer = setInterval(updateProgress, 1000 / 60);
-// 	// imgLoad.on('progress', function () {
-// 	// 		imgLoaded++;
-// 	// });
-
-// 	function updateProgress() {
-// 			var target = (imgLoaded / imgTotal) * 100;
-
-// 			current += (target - current) * 0.1;
-// 			$progressText.text(Math.floor(current) + '%');
-
-// 			if (current >= 100) {
-// 					clearInterval(progressTimer);
-// 					$progressBar.add($progressText).delay(500)
-// 							.animate({
-// 									opacity: 0
-// 							}, 100, function () {
-// 									$container.animate({
-// 											top: '-110%'
-// 									}, 1000, 'easeInOutQuint');
-// 							});
-// 					$('body').addClass('active');
-// 			}
-// 			if (current > 99.98) {
-// 					current = 100;
-// 			}
-// 	}
-// };
-
-const currentSection = document.querySelector('#about .learn')
-window.addEventListener('scroll', () => {
-	hadleAddClassShow('#about .about-intro')
-	hadleAddClassShow('#about .container')
-	hadleAddClassShow('#about .learn')
-})
-
-function hadleAddClassShow(section){
-	const currentSection = document.querySelector(section)
-	let wScroll = window.scrollY
-	console.log(wScroll, section, currentSection.offsetHeight / 2, currentSection.offsetHeight);
-	// console.log(section, currentSection.offsetTop - currentSection.clientHeight/2);
-	if ( wScroll >= currentSection.offsetTop - currentSection.offsetHeight / 2 ) {
-		currentSection.classList.add('show')
-	} else{
-		currentSection.classList.remove('show')
-	}
+function scrollAnimation(params) {
+	const targetName = document.querySelector(params)
+	let observer = new IntersectionObserver((target) => {
+		if(target[0].isIntersecting){
+			target[0].target.classList.add('show')
+		} else{
+			target[0].target.classList.remove('show')
+		}
+	
+	})
+	observer.observe(targetName)	
 }
 
-
+scrollAnimation('.about-intro')
+scrollAnimation('.about-signature')
+scrollAnimation('.learn')
+scrollAnimation('.create')
+scrollAnimation('.think')
+scrollAnimation('.title-box')
+scrollAnimation('.work-list.li1 .work-left')
+scrollAnimation('.work-list.li2 .work-left')
+scrollAnimation('.work-list.li3 .work-left')
+scrollAnimation('.work-list.li4 .work-left')
+scrollAnimation('.work-list.li1 .work-right')
+scrollAnimation('.work-list.li2 .work-right')
+scrollAnimation('.work-list.li3 .work-right')
+scrollAnimation('.work-list.li4 .work-right')
+scrollAnimation('.skill-01')
+scrollAnimation('.skill-02')
+scrollAnimation('.skill-03')
+scrollAnimation('.skill-04')
+scrollAnimation('.skill-05')
+scrollAnimation('.skill-06')
+scrollAnimation('.skill-07')
+scrollAnimation('#contact')
 
 
 
