@@ -85,8 +85,8 @@ header .gnb li:hover a em {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 2;
-  width: clamp(200px, 100%, 330px);
+  z-index: 10;
+  width: clamp(200px, 100%, 450px);
   height: 100%;
   background: url(../img/center_pic.jpg) no-repeat center center;
   background-size: contain;
@@ -96,7 +96,7 @@ header .gnb li:hover a em {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 5;
+  z-index: 10;
   width: 100%;
   height: 100%;
   background: url(../img/center_pic_cover.png) no-repeat center center;
@@ -108,7 +108,7 @@ header .gnb li:hover a em {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 10;
+  z-index: 8;
   font-size: 5rem;
   color: #fff;
   font-family: "Canvas", sans-serif;
@@ -222,7 +222,7 @@ header .gnb li:hover a em {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 11;
 }
 .main .svg-front svg {
   width: 100vw;
@@ -307,19 +307,6 @@ header .gnb li:hover a em {
     width: clamp(200px, 100%, 85vw);
     transform: translate(-50%, -41%);
   }
-  .main-profile span {
-    font-size: 3rem;
-  }
-  .main-profile span.name {
-    transform: translate(-50%, -260%);
-    font-size: 17vw;
-    letter-spacing: -2px;
-  }
-  .main-profile span.sub {
-    transform: translate(-50%, 175%);
-    letter-spacing: 0px;
-    font-size: 15vw;
-  }
   .main-rotate {
     top: 11%;
     right: 10%;
@@ -330,8 +317,9 @@ header .gnb li:hover a em {
   }
   .main .btn-story {
     top: 53%;
+    left: 7%;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 1px;
   }
 }
@@ -417,7 +405,7 @@ header .gnb li:hover a em {
   top: -2px;
   width: 20px;
   height: 20px;
-  background: #bc7f3430;
+  background: rgba(188, 127, 52, 0.1882352941);
 }
 #about .about-intro .context .desc span:nth-child(1) {
   opacity: 0;
@@ -455,7 +443,7 @@ header .gnb li:hover a em {
   width: 0%;
   height: 5px;
   opacity: 0;
-  background: #b57c6c90;
+  background: rgba(181, 124, 108, 0.5647058824);
   transition: all 0.8s 1.5s ease-in-out;
 }
 #about .duty {
@@ -653,7 +641,7 @@ header .gnb li:hover a em {
     width: 100%;
   }
   #about .duty-context.right .sub-tit,
-#about .duty-context.right .sub-list li {
+  #about .duty-context.right .sub-list li {
     text-align: right;
   }
   #about .duty-context .sub-tit {
@@ -1105,7 +1093,7 @@ header .gnb li:hover a em {
 }
 
 .prd-slides {
-  padding: 150px 0;
+  padding: 150px 15px;
   overflow: hidden;
   background-color: #6c6463;
 }
@@ -1377,7 +1365,7 @@ header .gnb li:hover a em {
   font-family: "Raleway", sans-serif;
   opacity: 0;
   transform: translateY(70px);
-  transition: all 1s 1s ease;
+  transition: all 1s 0.8s ease;
 }
 #skills .skill li .count:after {
   content: "%";
@@ -1733,7 +1721,7 @@ header .gnb li:hover a em {
     display: none;
   }
   .goodbye .my-info {
-    margin-top: 38%;
+    margin-top: 58%;
     flex-wrap: wrap;
     gap: 45px 0;
   }
@@ -1846,6 +1834,26 @@ header .gnb li:hover a em {
   box-sizing: border-box;
   background: #f6f4ee;
 }
+#contact .mail-form .to_name {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 2.2s ease;
+}
+#contact .mail-form .from_name {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 2.6s ease;
+}
+#contact .mail-form .email {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 3s ease;
+}
+#contact .mail-form .message {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 3.4s ease;
+}
 #contact .mail-form .btn-submit {
   margin-top: 20px;
   padding: 20px 0;
@@ -1853,9 +1861,10 @@ header .gnb li:hover a em {
   text-align: center;
   color: #543429;
   border-radius: 4px;
-  background: #f6f4ee;
+  background-color: #f6f4ee;
+  opacity: 0;
+  transition: opacity 1s 4.2s ease, background-color 1s ease-in-out;
   cursor: pointer;
-  transition: all 1s ease-in-out;
 }
 #contact .mail-form .btn-submit:hover {
   color: white;
@@ -1866,9 +1875,17 @@ header .gnb li:hover a em {
   color: #f1dec4;
   font-size: 1rem;
 }
+#contact .mail-sign.to {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 1.8s ease;
+}
 #contact .mail-sign.from {
   margin-top: 10px;
   text-align: right;
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s 3.8s ease;
 }
 @media (max-width: 768px) {
   #contact {
@@ -1891,38 +1908,6 @@ header .gnb li:hover a em {
 body.active .main .utils-sns a {
   opacity: 1 !important;
   transform: translateY(0) !important;
-}
-body.active .main-profile {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 2;
-  width: clamp(200px, 100%, 330px);
-  height: 100%;
-  background: url(../img/center_pic.jpg) no-repeat center center;
-  background-size: contain;
-  transform: translate(-50%, -50%);
-}
-body.active .main-profile .figure {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-  background: url(../img/center_pic_cover.png) no-repeat center center;
-  background-size: contain;
-  white-space: nowrap;
-  transform: translate(-50%, -50%);
-}
-body.active .main-profile span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 10;
-  font-size: 5rem;
-  color: #fff;
-  font-family: "Canvas", sans-serif;
 }
 body.active .main-profile span.name {
   opacity: 1;
@@ -1951,6 +1936,33 @@ body.active .main .svg-back svg .svg1 {
 }
 body.active .main .svg-back svg .svg2 {
   opacity: 1;
+}
+@media (max-width: 768px) {
+  body.active .main-profile span {
+    font-size: 3rem;
+  }
+  body.active .main-profile span.name {
+    transform: translate(-50%, -260%);
+    font-size: 17vw;
+    letter-spacing: -2px;
+  }
+  body.active .main-profile span.sub {
+    transform: translate(-50%, 175%);
+    letter-spacing: 0px;
+    font-size: 15vw;
+  }
+  body.active .main .svg-front svg {
+    height: 100vh;
+  }
+  body.active .main .svg-front svg .svg1 {
+    transform: translateY(50%);
+  }
+  body.active .main .svg-front svg .svg2 {
+    transform: scale(3);
+  }
+  body.active .main .svg-back {
+    transform: translate(-50%, -60%) scale(3);
+  }
 }
 
 #about .about-intro.show .activeAniText {
@@ -2365,6 +2377,16 @@ body.active .main .svg-back svg .svg2 {
   transform: translateY(0) !important;
 }
 #contact.show h3.title span:nth-child(12) {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+#contact.show .mail-form .mail-sign.to,
+#contact.show .mail-form .to_name,
+#contact.show .mail-form .from_name,
+#contact.show .mail-form .email,
+#contact.show .mail-form .message,
+#contact.show .mail-form .mail-sign.from,
+#contact.show .mail-form .btn-submit {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }

@@ -62,12 +62,11 @@ const swiper2 = new Swiper(".banners", {
 		prevEl: ".swiper-button-prev",
 	},
 	breakpoints: {
-		1024: {
-			slidesPerView: 5,  //브라우저가 1024보다 클 때
+		769: {
+			slidesPerView: 3,  //브라우저가 1024보다 클 때
 			spaceBetween: 30,
 		},
 	},
-
 });
 
 
