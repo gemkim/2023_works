@@ -21,7 +21,40 @@ function handleScrollHeader( scrollY ){
 	prevY = scrollY;
 }
 
+function setCount() {
+	const counters = document.querySelectorAll('.skill .count');
+	const speed = 200;
 
+	counters.forEach( counter => {
+		window.addEventListener('scroll', () => {
+			let isShow = counter.parentNode.classList.contains('show')
+			if( !isShow ) {
+				counter.innerText = 0
+				return
+			} else {
+			setTimeout(() => {
+				const animate = () => {
+					const value = + counter.getAttribute('data-counter');
+					const data = + counter.innerText;
+				
+					const time = value / speed;
+					if(data < value) {
+						counter.innerText = Math.ceil(data + time)
+						setTimeout(animate, 50);
+					} else {
+						counter.innerText = value;
+					}
+					
+				}
+				animate();
+			}, 1000)
+			}
+		})
+	});
+
+
+
+}
 
 const swiper = new Swiper(".mySwiper", {
 	slidesPerView: 1,
@@ -30,11 +63,15 @@ const swiper = new Swiper(".mySwiper", {
 		el: ".swiper-pagination",
 		type: "fraction", // bullets, progressbar, custom, Scrollbar
 	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
 	breakpoints: {
 		1024: {
-			slidesPerView: 2.5,  //브라우저가 1024보다 클 때
-			spaceBetween: 30,
-			centeredSlides: true,
+			slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
 			pagination: {
 				el: ".swiper-pagination",
 				type: "bullets", 
@@ -68,26 +105,6 @@ const swiper2 = new Swiper(".banners", {
 		},
 	},
 });
-
-
-
-// function addShowClassName(id ){
-	
-// 	const area = document.querySelector( '#' + id)
-// 	console.log(area);
-// 	area.addEventListener('scroll', () => {
-// 		console.log('test');
-// 		let currentScrollY = window.screenTop; // 현재 스크롤 위치
-		
-// 		console.log(currentScrollY);
-// 	})
-// 	if (scrollY >= area.offsetTop - window.innerHeight / 2) {
-// 		area.classList.add('show')
-// 	}
-// }
-
-
-
 
 // Map
 function myMap(){
@@ -164,8 +181,7 @@ form.addEventListener('submit', function(event) {
 });
 
 (() => {
-	counter();
-	// imagesProgress();
+	setCount();
 	setTimeout(() => {
 		const body = document.querySelector('body')
 		body.classList.add('active')
@@ -174,10 +190,14 @@ form.addEventListener('submit', function(event) {
 	// intro 효과 
 	const main = document.querySelector('#main')
 	main.classList.remove('show')
-	setTimeout(intro, 0);
 
-
-	function intro(){}
+	const allLinks = document.querySelectorAll('a')
+	allLinks.forEach( aLink => {
+		console.log(aLink);
+		aLink.addEventListener('click', e => {
+			e.target.preventDefault()
+		})
+	});
 })()
 
 function counter() {
@@ -245,64 +265,6 @@ scrollAnimation('.skill-05')
 scrollAnimation('.skill-06')
 scrollAnimation('.skill-07')
 scrollAnimation('#contact')
-
-
-
-//Dot 메뉴
-// var dot = $("#dot > ul > li");
-// var cont = $("#contents > section");
-
-// dot.click(function (e) {
-//     e.preventDefault();
-//     var target = $(this);
-//     var index = target.index();
-//     //alert(index);
-//     var section = cont.eq(index);
-//     var offset = section.offset().top;
-//     $("html,body").animate({
-//         scrollTop: offset
-//     }, 600, "easeInOutExpo");
-// });
-
-// $(window).scroll(function () {
-//     var wScroll = $(this).scrollTop();
-//     if (wScroll > 200) {
-//         $(".overlay_nav").addClass("add");
-//     } else if (wScroll == 0) {
-//         $(".overlay_nav").removeClass("add");
-//     }
-//     if (wScroll > 200) {
-//         $("#dot ul").addClass("add");
-//     } else if (wScroll == 0) {
-//         $("#dot ul").removeClass("add");
-//     }
-//     if (wScroll >= cont.eq(0).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(0).addClass("current");
-//     }
-//     if (wScroll >= cont.eq(1).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(1).addClass("current");
-//     }
-//     if (wScroll >= cont.eq(2).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(2).addClass("current");
-//     }
-//     if (wScroll >= cont.eq(3).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(3).addClass("current");
-//     }
-//     if (wScroll >= cont.eq(4).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(4).addClass("current");
-//     }
-//     if (wScroll >= cont.eq(5).offset().top) {
-//         dot.removeClass("current");
-//         dot.eq(5).addClass("current");
-//     }
-// });
-
-
 
 
 // //프로젝트 text-hover 효과
