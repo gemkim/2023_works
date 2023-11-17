@@ -848,7 +848,7 @@ header{
         &-left{
           .text-box{
             .title{
-              font-size: 3.8rem;
+              font-size: 3.5rem;
             }
             .desc{
               margin-top: 10px;
@@ -877,6 +877,9 @@ header{
             left: 50%;
             margin-top: 0;
             transform: translateX(-50%);
+            .title{
+              font-size: 2.4rem;
+            }
             .desc{
               margin-top: 10px;
               font-size: 1.3rem;
@@ -888,7 +891,7 @@ header{
           .text_box{
             padding: 80px 0 60px 15%;
             h4.subject{
-              font-size: 2.4rem;
+              font-size: 2.2rem;
             }
             .desc{
               width: 85%;
@@ -938,12 +941,16 @@ header{
   .work-wrap{
     margin-top: 120px;
     .slide-area{
-      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
       .category{
-        position: absolute;
-        top: 36%;
-        left: 5%;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
         width: 300px;
+        height: 400px;
         font-size: 3rem;
         line-height: 40px;
         font-family: "Canvas", sans-serif;
@@ -954,13 +961,13 @@ header{
       }
       .swiper {
         padding-bottom: 50px;
-        z-index: 10;
+        z-index: 12;
         cursor: col-resize;
         .swiper-wrapper{
           height: 380px;
           background-color: #6c6463;
           .swiper-slide {
-            width: 360px;
+            max-width: 440px;
             background: #d9d4c9;
             flex-shrink: 0;
             img {
@@ -970,6 +977,26 @@ header{
               object-fit: cover;
             }
           }
+        }
+        .swiper-button-next, .swiper-button-prev{
+          width: 50px;
+          height: 50px;
+          background-color: #fff;
+          border-radius: 50%;
+          &:after{
+            font-size: 1.4rem;
+          }
+        }
+        .swiper-button-next{
+         
+          
+        }
+        .swiper-button-prev{
+          width: 50px;
+          height: 50px;
+          background-color: #fff;
+          border-radius: 50%;
+
         }
         .swiper-pagination{
           .swiper-pagination-bullet-active{
