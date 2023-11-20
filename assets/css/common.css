@@ -38,7 +38,6 @@
 body{
   height: auto;
   background-color: #ebe3db;
-  cursor: none;
 }
 a, button{
   cursor: none;
@@ -69,7 +68,7 @@ button:active{
   height: 100%;
 }
 
-.cursor{
+/* .cursor{
   position: absolute;
   top: 0;
   left: 0;
@@ -104,7 +103,7 @@ button:active{
   border-radius: 50%;
   transform-origin: -40px -40px;
   animation: rotate 2.5s infinite linear;
-}
+} */
 
 
 @media (max-width: 980px) {
