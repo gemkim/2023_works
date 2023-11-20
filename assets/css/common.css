@@ -39,19 +39,6 @@ body{
   height: auto;
   background-color: #ebe3db;
 }
-a, button{
-  cursor: none;
-}
-a:hover,
-a:visited,
-a:focus,
-a:active,
-button:hover,
-button:visited,
-button:focus,
-button:active{
-  cursor: none;
-}
 
 .ir {
   display: block;
