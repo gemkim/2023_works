@@ -185,7 +185,7 @@ form.addEventListener('submit', function(event) {
 	setTimeout(() => {
 		const body = document.querySelector('body')
 		body.classList.add('active')
-	}, 2000)
+	}, 1000)
 
 	// intro 효과 
 	const main = document.querySelector('#main')
