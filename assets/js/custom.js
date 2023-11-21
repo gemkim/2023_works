@@ -118,54 +118,54 @@ function myMap(){
 }
 
 /*마우스 효과*/
-let mouseX = 0;
-let mouseY = 0;
-let shapeX = 0;
-let shapeY = 0;
-let speed = .25;
-const mouseShape = document.querySelector('.cursor');
+// let mouseX = 0;
+// let mouseY = 0;
+// let shapeX = 0;
+// let shapeY = 0;
+// let speed = .25;
+// const mouseShape = document.querySelector('.cursor');
 
-FollowCursor();
+// FollowCursor();
 
-function FollowCursor() {
-  let delayX = mouseX - shapeX;	// X 거리차이
-  let delayY = mouseY - shapeY;	// Y 거리차이
-  shapeX = shapeX + (delayX * speed);
-  shapeY = shapeY + (delayY * speed);
+// function FollowCursor() {
+//   let delayX = mouseX - shapeX;	// X 거리차이
+//   let delayY = mouseY - shapeY;	// Y 거리차이
+//   shapeX = shapeX + (delayX * speed);
+//   shapeY = shapeY + (delayY * speed);
   
-  mouseShape.style.left = shapeX + 'px';
-  mouseShape.style.top = shapeY + 'px';
+//   mouseShape.style.left = shapeX + 'px';
+//   mouseShape.style.top = shapeY + 'px';
   
-  requestAnimationFrame(FollowCursor);
-}
-const linkAll = document.querySelectorAll('a');
-const btnAll = document.querySelectorAll('button');
+//   requestAnimationFrame(FollowCursor);
+// }
+// const linkAll = document.querySelectorAll('a');
+// const btnAll = document.querySelectorAll('button');
 
-TrensformCursorSize(linkAll)
-TrensformCursorSize(btnAll)
-function TrensformCursorSize(cursor){
-	cursor.forEach(link => {
-		link.addEventListener('mouseover', (e) => {
-			mouseShape.style.width = 50 + 'px'
-			mouseShape.style.height = 50 + 'px'
-		})
-		link.addEventListener('mouseout', (e) => {
-			mouseShape.style.width = 200 + 'px'
-			mouseShape.style.height = 200 + 'px'
-		})
-	});
-}
-window.addEventListener('mousemove', (e) => {
-	mouseX = e.pageX;
-  mouseY = e.pageY;
-})
+// TrensformCursorSize(linkAll)
+// TrensformCursorSize(btnAll)
+// function TrensformCursorSize(cursor){
+// 	cursor.forEach(link => {
+// 		link.addEventListener('mouseover', (e) => {
+// 			mouseShape.style.width = 50 + 'px'
+// 			mouseShape.style.height = 50 + 'px'
+// 		})
+// 		link.addEventListener('mouseout', (e) => {
+// 			mouseShape.style.width = 200 + 'px'
+// 			mouseShape.style.height = 200 + 'px'
+// 		})
+// 	});
+// }
+// window.addEventListener('mousemove', (e) => {
+// 	mouseX = e.pageX;
+//   mouseY = e.pageY;
+// })
 
 // main - my story 버튼 무빙
-document.addEventListener('mousemove', function (e) {
-	const docStyle = document.documentElement.style;
-    docStyle.setProperty('--mouse-x', e.clientX);
-    docStyle.setProperty('--mouse-y', e.clientY);
-});
+// document.addEventListener('mousemove', function (e) {
+// 	const docStyle = document.documentElement.style;
+//     docStyle.setProperty('--mouse-x', e.clientX);
+//     docStyle.setProperty('--mouse-y', e.clientY);
+// });
 
 // 메일보내기 JS 
 const form = document.querySelector('#form')
@@ -193,7 +193,6 @@ form.addEventListener('submit', function(event) {
 
 	const allLinks = document.querySelectorAll('a')
 	allLinks.forEach( aLink => {
-		console.log(aLink);
 		aLink.addEventListener('click', e => {
 			e.target.preventDefault()
 		})
